@@ -4,6 +4,7 @@ return {
 
         dependencies = {
             "nvim-lua/plenary.nvim",
+            'nvim-tree/nvim-web-devicons'
         },
         config = function()
             local actions = require("telescope.actions")
@@ -56,6 +57,7 @@ return {
             vim.keymap.set("n", "<leader>o", builtin.buffers, {})
             vim.keymap.set("n", "<leader>f", builtin.find_files, {})
             vim.keymap.set("n", "<leader>r", builtin.live_grep, {})
+            vim.keymap.set("n", "<leader>h", builtin.oldfiles, {})
         end
     }
 }
