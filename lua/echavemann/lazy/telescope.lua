@@ -38,18 +38,6 @@ return {
                         case_mode = "smart_case",
                     },
                 },
-                pickers = {
-                    buffers = {
-                        mappings = {
-                            i = {
-                                ["<c-d>"] = actions.delete_buffer,
-                            },
-                            n = {
-                                ["<c-d>"] = actions.delete_buffer,
-                            },
-                        },
-                    },
-                }
             }
             require("telescope").setup(options)
             local builtin = require('telescope.builtin')
