@@ -6,7 +6,7 @@ return {
       ensure_installed = {
         "bash",
         "c",
-	"cpp",
+        "cpp",
         "comment",
         "json",
         "latex",
