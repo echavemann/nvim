@@ -7,10 +7,9 @@ return {
     config = function()
         local function lsp_keymaps(bufnr)
             local opts = { buffer = bufnr, noremap = true, silent = true }
-            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, vim.tbl_extend('force', opts, { desc = 'Go to Definition' }))
-            vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, vim.tbl_extend('force', opts, { desc = 'Go to Declaration' }))
-            vim.keymap.set('n', 'gr', vim.lsp.buf.references, vim.tbl_extend('force', opts, { desc = 'Find References' }))
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, vim.tbl_extend('force', opts, { desc = 'Hover Documentation' }))
+            vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
         end
         require("mason").setup()
         require("mason-lspconfig").setup({
