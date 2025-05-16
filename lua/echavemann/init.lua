@@ -1,4 +1,5 @@
 require("echavemann.mapping")
+require("echavemann.options")
 
 require("echavemann.lazy_init")
 vim.api.nvim_create_autocmd("LspAttach", {
