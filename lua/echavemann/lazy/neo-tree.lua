@@ -28,6 +28,18 @@ return {
             desc = "Buffer explorer",
         },
     },
+    config = function()
+        require("neo-tree").setup(
+            {
+                window = {
+                    width = 30,
+                    position = "right",
+                },
+
+
+            }
+        )
+    end,
     deactivate = function()
         vim.cmd([[Neotree close]])
     end,
