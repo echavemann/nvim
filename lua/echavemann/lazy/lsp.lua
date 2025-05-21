@@ -11,6 +11,7 @@ return {
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
             vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
         end
+        local lspconfig = require("lspconfig")
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
@@ -29,7 +30,6 @@ return {
                     }
                 end,
                 ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
                         settings = {
                             Lua = {
@@ -40,7 +40,27 @@ return {
                             }
                         }
                     }
-                end
+                end,
+                ["pylsp"] = function()
+                lspconfig.pylsp.setup {
+                    settings = {
+                        pylsp = {
+                            plugins = {
+                                rope_autoimport = {
+                                    enabled = true,
+                                    memory = true,
+                                },
+                                rope_completion = {
+                                    enabled = true,
+                                },
+                                pycodestyle = { enabled = false },
+                                pyflakes = { enabled = false },
+                                mccabe = { enabled = false },
+                            },
+                        },
+                    },
+                }
+            end
             }
         })
     end
