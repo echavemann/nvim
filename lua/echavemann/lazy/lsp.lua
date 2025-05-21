@@ -42,25 +42,45 @@ return {
                     }
                 end,
                 ["pylsp"] = function()
-                lspconfig.pylsp.setup {
-                    settings = {
-                        pylsp = {
-                            plugins = {
-                                rope_autoimport = {
-                                    enabled = true,
-                                    memory = true,
+                    lspconfig.pylsp.setup {
+                        settings = {
+                            pylsp = {
+                                plugins = {
+                                    rope_autoimport = {
+                                        enabled = true,
+                                        memory = true,
+                                    },
+                                    rope_completion = {
+                                        enabled = true,
+                                    },
+                                    pycodestyle = { enabled = false },
+                                    pyflakes = { enabled = false },
+                                    mccabe = { enabled = false },
                                 },
-                                rope_completion = {
-                                    enabled = true,
-                                },
-                                pycodestyle = { enabled = false },
-                                pyflakes = { enabled = false },
-                                mccabe = { enabled = false },
                             },
                         },
-                    },
-                }
-            end
+                    }
+                end,
+                ["clangd"] = function()
+                    lspconfig.clangd.setup {
+                        cmd = {
+                            "clangd",
+                            "--background-index",
+                            "-j=4",
+                            "--clang-tidy",
+                            "--suggest-missing-includes",
+                            "--all-scopes-completion",
+                            "--cross-file-rename",
+                            "--completion-style=detailed",
+                            "--header-insertion=iwyu",
+                            "--pch-storage=memory",
+                        },
+                        init_options = {
+                            completeUnimported = true,
+                            semanticHighlighting = true,
+                        },
+                    }
+                end
             }
         })
     end
