@@ -33,3 +33,4 @@ vim.opt.whichwrap:append "<,>,[,],h,l"
 vim.opt.formatoptions:remove { "c", "r", "o" }
 vim.opt.linebreak = true
 vim.opt.relativenumber = true
+vim.opt.number = true -- makes relative 0 the actual number
