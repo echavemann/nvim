@@ -35,7 +35,7 @@ return {
                             enabled = true,
                         },
                         pycodestyle = { enabled = false },
-                        pyflakes = { enabled = false },
+                        pyflakes = { enabled = true },
                         mccabe = { enabled = false },
                     },
                 },
