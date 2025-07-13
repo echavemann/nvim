@@ -1,0 +1,28 @@
+name: Neovim Startup Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check-nvim-startup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install Neovim (0.11.2 currently used.)
+        uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: v0.11.2
+
+      - name: Show Neovim version
+        run: nvim --version
+
+      - name: Run Neovim to check for startup errors
+        run: |
+          nvim --headless +"qa"
+
