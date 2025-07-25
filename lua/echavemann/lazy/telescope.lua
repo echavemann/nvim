@@ -7,7 +7,6 @@ return {
             'nvim-tree/nvim-web-devicons'
         },
         config = function()
-            local actions = require("telescope.actions")
             local options = {
                 defaults = {
                     vimgrep_arguments = {
