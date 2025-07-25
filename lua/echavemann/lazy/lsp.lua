@@ -23,23 +23,15 @@ return {
                 },
             },
         })
-        vim.lsp.config("pylsp", {
+
+        vim.lsp.config("pyrefly", {
             settings = {
-                pylsp = {
-                    plugins = {
-                        rope_autoimport = {
-                            enabled = true,
-                            memory = true,
-                        },
-                        rope_completion = {
-                            enabled = true,
-                        },
-                        pycodestyle = { enabled = false },
-                        pyflakes = { enabled = true },
-                        mccabe = { enabled = false },
-                    },
-                },
-            },
+            }
+        })
+
+        vim.lsp.config("clangd", {
+            settings = {
+            }
         })
 
         require("mason").setup()
@@ -47,7 +39,7 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "clangd",
-                "pylsp",
+                "pyrefly",
             },
             automatic_installation = true,
         })
