@@ -23,7 +23,7 @@ function M.config()
   }
 
   local function footer()
-    return "Be Insane or Die Trying."
+    return ">"
   end
 
   dashboard.section.footer.val = footer()
