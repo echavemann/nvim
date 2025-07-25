@@ -46,6 +46,8 @@ return {
             vim.keymap.set("n", "<leader>f", builtin.find_files, {})
             vim.keymap.set("n", "<leader>r", builtin.live_grep, {})
             vim.keymap.set("n", "<leader>h", builtin.oldfiles, {})
+            vim.keymap.set("n", "<leader>y", builtin.lsp_dynamic_workspace_symbols, {})
+            vim.keymap.set("n", "<leader>g", require("telescope.builtin").grep_string, {})
         end
     }
 }
