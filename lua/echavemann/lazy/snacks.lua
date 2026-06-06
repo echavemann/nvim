@@ -6,6 +6,7 @@ return {
         ---@type snacks.Config
         opts = {
             picker = { enabled = true },
+            words = { enabled = true },
         },
         keys = {
             { "<leader>f", function() Snacks.picker.files() end,                  desc = "Find Files" },
